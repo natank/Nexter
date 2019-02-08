@@ -1,0 +1,5 @@
+.Nav {
+	background-color: var(--color-primary);
+	order: 1;
+	flex-basis: 6%;
+}
