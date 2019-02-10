@@ -18,11 +18,8 @@
 }
 
 
-html {
-	font-family: var(--font-primary);
-	font-size: 63.5%;
-	line-height: 2rem;
-
+* {
+	box-sizing: border-box;
 }
 
 .container {
