@@ -1,6 +1,5 @@
 .Nav {
 	background-color: var(--color-primary);
-	order: 1;
-	flex-basis: 6%;
-	flex-shrink: 0;
+	grid-column: sidebar-start / sidebar-end;
+	grid-row: 1 / -1;
 }

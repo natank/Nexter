@@ -4,7 +4,7 @@ import postcssPresetEnv from 'postcss-preset-env';
 import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
 import postcssMixins from 'postcss-mixins';
-
+import postcssExtend from 'postcss-extend';
 gulp.task('styles', function () {
     let plugins = [
         postcssImport,
@@ -12,8 +12,8 @@ gulp.task('styles', function () {
           stage: 3
         }),
         postcssMixins,
-        postcssNested
-        
+        postcssNested,
+        postcssExtend        
     ];
     return gulp.src('./app/assets/styles/styles.css')
         .pipe(postcss(plugins))

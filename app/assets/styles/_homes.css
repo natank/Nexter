@@ -1,0 +1,6 @@
+.cHomes {
+	grid-column: center-start / center-end;
+	background-color: var(--color-secondary);
+	padding: 3rem;
+	color: white;
+}

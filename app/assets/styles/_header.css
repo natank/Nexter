@@ -1,4 +1,5 @@
 .cHeader {
-	background-color: var(--color-secondary);
+	grid-column: full-start / col-end 6;
+	background-color: var(--color-primary-dark);
 	color: var(--color-grey-light-1);
 }

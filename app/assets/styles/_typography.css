@@ -1,5 +1,30 @@
 html {
 	font-family: var(--font-primary);
 	font-size: 63.5%;
-	line-height: 2rem;
+	line-height: 3rem;
+}
+
+.heading {
+	font-family: var(--font-display);	
+	font-weight: 400;
+	&-1 {
+		@extend .heading;
+	}
+	&-2 {
+		@extend .heading;
+	}
+	&-3 {
+		@extend .heading;
+	}
+	&-4 {
+		@extend .heading;
+		font-size: 1.9rem;
+		&--light {
+			color: var(--color-grey-light-1);
+		}
+		&--dark {
+			color: var(--color-grey-dark-1);
+		}
+
+	}
 }

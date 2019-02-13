@@ -1,4 +1,7 @@
 .cFooter {
+
+	grid-column: full-start / full-end;
+
 	background-color: var(--color-secondary);
 	color: var(--color-grey-light-1);
 	display: flex;
