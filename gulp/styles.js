@@ -5,6 +5,8 @@ import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
 import postcssMixins from 'postcss-mixins';
 import postcssExtend from 'postcss-extend';
+import postcssHexrgba from 'postcss-hexrgba';
+
 gulp.task('styles', function () {
     let plugins = [
         postcssImport,
@@ -13,7 +15,8 @@ gulp.task('styles', function () {
         }),
         postcssMixins,
         postcssNested,
-        postcssExtend        
+        postcssExtend,
+        postcssHexrgba        
     ];
     return gulp.src('./app/assets/styles/styles.css')
         .pipe(postcss(plugins))
