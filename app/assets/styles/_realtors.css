@@ -2,4 +2,50 @@
 	grid-column: col-start 7 / full-end;
 	background-color: var(--color-secondary);
 	color: white;
+	display: grid;
+	grid-template-columns: [wp-st-bgn] 1fr [wp-st-en content-st] 3fr [content-en wp-fin-bgn] 1fr [wp-fin-en];
+	align-content: center;
+	grid-row-gap: 3rem;
+
+	
+	&__title {
+		grid-column: wp-st-bgn / wp-fin-en;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	&__item {
+		grid-column: wp-st-en / wp-fin-bgn;
+		display: grid;
+		grid-column-gap: 2rem;
+		grid-template-columns: [img-bgn] 1fr [img-en name-box-st] 2fr [name-box-en];
+		grid-template-rows: repeat(2, max-content);
+		align-items: center;
+	}
+
+	&__img {
+		width: 100%;
+		grid-column: img-bgn / img-en;
+		grid-row: 1 / span 2;
+		border-radius: 50%;
+
+	}
+
+	&__name, &__sold {
+		align-self: end;
+		padding: 0;
+		margin: 0;
+		grid-column: name-box-st / name-box-en;		
+	}
+
+	&__sold {
+		align-self: start;
+		color: var(--color-grey-light-2);
+		font-weight: 100;
+	}
+
+	&__name {
+		font-family: var(--font-display);
+		font-size: 2.5rem;
+	}
 }

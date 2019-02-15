@@ -1,0 +1,220 @@
+.modal-menu {
+
+	/* Layering the elements */
+
+	&__input {z-index: 2100;}
+	&__button {z-index: 2000;}
+	&__links {z-index: 1900;}
+	&__content {z-index: 1800;}
+
+	&__input, &__button {
+		position: fixed;
+		right: 7rem;
+		top:7rem;
+		width: $menuButtonRadious;
+		height: $menuButtonRadious;
+		border-radius: 50%;
+		cursor: pointer;
+		@mixin atTabPortr {
+			right:3rem;
+			top:3rem;
+			width: calc($menuButtonRadious/1.5);
+			height: calc($menuButtonRadious/1.5);
+		}
+	}
+
+	&__input {
+		opacity: 0;
+	}
+
+	&__button {
+		background-color: #fff;
+	}
+/*Animate the modal-menu__line*/
+	&__input ~ &__button &__line{
+		width: 45%;
+		height:.2rem;
+		position:absolute;
+		overflow: visible;
+		top:50%;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color : $mainBlack;
+		transition: all .2s ease-out;
+		@mixin atTabPortr {
+			height: .1rem;
+		}
+		&::before, &::after {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: $mainBlack;
+			content: "";
+			transform-origin: 50% 0;
+			
+			margin: 0;
+			transition: all .1s ease-out;
+			z-index: 200000;
+		}
+
+		&::before {
+			top: -1rem;
+			@mixin atTabPortr {
+				top: -.7rem;
+			}
+			@mixin atPhone {
+				top: -1.3rem;
+			}
+		} 
+		&::after {
+			bottom: -1rem;
+			@mixin atTabPortr {
+				bottom: -.7rem;
+			}
+			@mixin atPhone {
+				bottom: -1.3rem;
+			}
+		}
+		transition: all .1s ease-out;
+	}
+
+    &__input:hover ~ &__button &__line {
+
+			&::before {
+				top: -1.1rem;
+				@mixin atTabPortr {
+					top: -.8rem;
+				}
+				@mixin atPhone {
+					top: -1.6rem;
+				}
+			} 
+			&::after {
+				bottom: -1.1rem;
+				@mixin atTabPortr {
+					bottom: -.8rem;
+				}
+				@mixin atPhone {
+					bottom: -1.6rem;
+				}
+			}	
+	}
+
+	&__input:checked ~ &__button &__line {
+		transform-origin: 50% 0;
+		border: none;
+		background-color: transparent;
+		&::before {
+			transform: rotate(-135deg);
+			opacity:1;
+			top:0; bottom:0;
+		} 
+		&::after {
+			bottom:0; top:0;
+			opacity:1;
+			transform: rotate(135deg);
+		}
+	}
+
+	
+/* Animate the modal-menu__links*/
+	&__content { 
+		position: fixed;
+		top: 7.1rem;
+		right: 7.1rem;
+		border-radius: 50%;
+		width: calc($menuButtonRadious - .5rem);
+		height: calc($menuButtonRadious - .5rem);
+		background-image: radial-gradient($lightGreen, $mainGreen);
+		@mixin atTabPortr {
+			width: calc($menuButtonRadious/1.5 - .3rem);
+			height: calc($menuButtonRadious/1.5 - .3rem);
+			top: 3.1rem;
+			right: 3.1rem;
+
+		}
+	}
+
+	&__links {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 0;
+		opacity: 0;
+		visibility: hidden;
+		transform: translate(-130%, -50%);
+		transition: all .4s cubic-bezier(0.86, 0, 0.07, 1);
+		h1 {
+			color: $mainWhite;
+			text-transform: uppercase;
+			font-weight: 300;
+			font-size: 3rem;
+			text-align: center;
+
+			@mixin atPhone {
+				font-size: 6rem;
+			}
+			
+			a {
+				position: relative;
+				display: inline-block;
+				text-decoration: none;
+				color: inherit;
+				overflow: hidden;
+				padding:1rem 2rem;
+				&::after  {
+					position: absolute;
+					left:130%;
+					top:0%;
+					content: linear-gradient(#fff, #fff);
+					width: 230%;
+					height: 100%;
+					z-index:-1;
+					transform: skewX(-45deg);
+					transition: all .3s ease-out;
+				}
+				&:hover::after {
+					left: -35%;
+
+				}
+				&:hover {
+					color: $mainGreen;
+				}
+				transition: all .3s ease-out;
+			}
+		}
+	}
+
+	/* Close modal menu animations */
+	
+	
+	
+	/* Animate the whole modal menu */
+
+	/* Show effect */
+
+	&__input ~  &__links { 
+		
+	}
+
+	&__input ~  &__content { 
+		transition: all .9s .2s cubic-bezier(0.86, 0, 0.07, 1);
+	}
+
+
+	&__input:checked ~  &__links {
+		width: 100%;
+		opacity: 1;
+		transform: translate(-50%, -50%);
+
+		transition: all .3s .7s cubic-bezier(0.86, 0, 0.07, 1);
+		visibility: visible;
+
+	}
+
+	&__input:checked ~ &__content {
+		transform: scale(80);
+	}
+}
+
+	
