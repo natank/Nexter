@@ -1,30 +1,48 @@
 .cRealtors {
-	grid-column: col-start 7 / full-end;
+	grid-column: full-start / -1;
+	@mixin atTab {
+		grid-column: col-start 7 / full-end;	
+	}
 	background-color: var(--color-secondary);
 	color: white;
-	display: grid;
-	grid-template-columns: [wp-st-bgn] 1fr [wp-st-en content-st] 3fr [content-en wp-fin-bgn] 1fr [wp-fin-en];
-	align-content: center;
-	grid-row-gap: 3rem;
-
+	padding: 0;
+	display:grid;
+	grid-template-columns: repeat(3, max-content);
+	grid-template-rows: repeat(2, max-content);
+	grid-column-gap: 8rem;
+	grid-row-gap: 2rem;
+	padding: 5rem 0;
+	@mixin atTab {
+		grid-template-columns: max-content;
+		grid-auto-flow: row;
+		align-content: center;
+		padding: 0;	
+	}
+	justify-content: center;
+	align-items: center;
 	
 	&__title {
-		grid-column: wp-st-bgn / wp-fin-en;
 		font-size: 2rem;
+		@mixin atTab {
+			font-size: 4rem;
+		}
 		text-align: center;
+
+		grid-column: 1 / -1;
 	}
 
 	&__item {
-		grid-column: wp-st-en / wp-fin-bgn;
 		display: grid;
-		grid-column-gap: 2rem;
-		grid-template-columns: [img-bgn] 1fr [img-en name-box-st] 2fr [name-box-en];
+
+		grid-template-columns: [img-bgn] 10rem [img-en name-box-st] max-content [name-box-en];
 		grid-template-rows: repeat(2, max-content);
 		align-items: center;
+		grid-column-gap: 2rem;
 	}
 
 	&__img {
-		width: 100%;
+		display: block;
+		height: 10rem;
 		grid-column: img-bgn / img-en;
 		grid-row: 1 / span 2;
 		border-radius: 50%;
@@ -42,10 +60,16 @@
 		align-self: start;
 		color: var(--color-grey-light-2);
 		font-weight: 100;
+		@mixin atTab {
+			font-size: 2rem;
+		}
 	}
 
 	&__name {
 		font-family: var(--font-display);
-		font-size: 2.5rem;
+		font-size: 2rem;
+		@mixin atTab {
+			font-size: 3rem;
+		}
 	}
 }

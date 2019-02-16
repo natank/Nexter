@@ -1,6 +1,13 @@
 html {
 	font-family: var(--font-primary);
-	font-size: 50%;
+	font-size: 30%;
+
+	@mixin atMobL {
+		font-size: 40%;
+	}
+	@mixin atLapL {
+		font-size: 62.5%;
+	}
 }
 
 body {

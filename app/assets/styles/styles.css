@@ -1,4 +1,6 @@
 @import "normalize.css";
+@import "_mixins";
+@import "_base";
 @import "_typography";
 @import "_sidebar";
 @import "_header";
@@ -8,5 +10,4 @@
 @import "_homes";
 @import "_gallery";
 @import "_footer";
-@import "_base";
-@import "_mixins";
+

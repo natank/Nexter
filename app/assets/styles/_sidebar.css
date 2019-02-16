@@ -1,9 +1,19 @@
 .Nav {
 	background-color: var(--color-primary);
-	grid-column: sidebar-start / sidebar-end;
-	grid-row: 1 / -1;
+	grid-column: 1 / -1;
+	grid-row: 1 / 2;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
+	padding-right: 2rem;
+	align-items: center;
+
+	@mixin atTab {
+		grid-column: 1 / 2;
+		grid-row: 1 / -1;
+		align-items: stretch;
+		justify-content: center;
+		padding: 0;
+	}
 
 }
 
@@ -15,9 +25,12 @@
 	background-color: #fff;
 	height: 2px;
 	width: 4.5rem;
-	margin-top: 4rem;
-
-
+	margin-top: 0;
+	
+	@mixin atTab {
+		margin-top: 4rem;
+	}
+	
 	&::before,
 	&::after {
 		background-color: #fff;

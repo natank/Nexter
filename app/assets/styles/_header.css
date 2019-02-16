@@ -1,5 +1,9 @@
 .cHeader {
-	grid-column: full-start / col-end 6;
+	grid-column: full-start / -1;
+
+	@mixin atTab {
+		grid-column: full-start / col-end 6;	
+	}
 	padding: 3rem 0 3rem 0;
 	background: linear-gradient(rgba(#101d2c, .9), rgba(#101d2c, .9)) 
 					,url(img/house-3.jpeg);
@@ -8,10 +12,21 @@
 	color: var(--color-grey-light-1);
 
 	display: grid;
-	grid-template-columns: 1fr [main-start] repeat(4, 3fr) [main-end]1fr;
-	grid-template-rows: [logo-start]30%[logo-end sub-title-start] minmax(8%, min-content) [sub-title-end title-start]15% [title-end cta-start]8% [cta-end] 5% [seen-start] 15% [seen-end logos-start] 1fr [logos-end];
-	
 
+			grid-template-columns: 1fr [main-start] repeat(4, 3fr) [main-end] 1fr;
+		grid-template-rows: [logo-start]30%[logo-end sub-title-start] minmax(8%, min-content) [sub-title-end title-start] minmax(min-content, max-content) [title-end cta-start]8% [cta-end seen-start] 15% [seen-end logos-start] 25% [logos-end];
+		grid-row-gap: 2rem;
+		align-items: center;	
+
+	@mixin atTab {
+		grid-template-columns: 1fr [main-start] repeat(4, 3fr) [main-end] 1fr;
+		grid-template-rows: [logo-start]30%[logo-end sub-title-start] minmax(8%, min-content) [sub-title-end title-start] minmax(min-content, max-content) [title-end cta-start]8% [cta-end] 5% [seen-start] 15% [seen-end logos-start] 1fr [logos-end];
+		grid-row-gap: 2rem;
+		align-items: center;	
+	}
+	
+	
+	
 
 	&__logo, 
 	&__sub-title, 
@@ -34,6 +49,7 @@
 		grid-row: logo-start / logo-end;
 		height: 5vh;
 		justify-self: center;
+		align-self: start;
 	}
 
 	&__sub-title {
@@ -44,6 +60,10 @@
 	&__title {
 		font-style: initial;
 		font-size: 5rem;
+
+		@mixin atMobS {
+			font-size: 5rem;
+		}
 	}
 
 	&__cta {
@@ -56,10 +76,11 @@
 		grid-column: main-start / main-end;
 		grid-row: seen-start / seen-end;
 		display: grid;
-		grid-template-columns: 4fr 2fr 4fr;
+		grid-template-columns: 4fr minmax(min-content, max-content) 4fr;
+		grid-gap: 2rem;
 		align-content: center;
 		align-items: center;
-
+		
 		p {
 			text-align: center;
 			font-size: 2rem;
@@ -87,6 +108,5 @@
 	&__logo--tc {
 		width: 80%;
 	}
-
 
 }

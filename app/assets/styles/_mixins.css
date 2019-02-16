@@ -1,8 +1,57 @@
-@define-mixin atLarge {
-	@media (min-width: 530px) {
+/* Responsive Breakpoints */
+	$bp-4k:        160em;    /* 2560px */
+	$bp-lap-l:     90em; 	 /* 1440px */
+	$bp-lap  :     64em;     /* 1024px */
+	$bp-tab  :     56.5em;   /* 768px */
+	$bp-mobile-l : 26.56em;  /* 425px */
+	$bp-mobile-m : 23.44em;  /* 375px */
+	$bp-mobile-s : 20em;     /* 320px */
+
+
+@define-mixin atMobS {
+	@media only screen and (min-width: $bp-mobile-s) {
 		@mixin-content;
 	}
 }
+
+@define-mixin atMobM {
+	@media only screen and (min-width: $bp-mobile-m) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atMobL {
+	@media only screen and (min-width: $bp-mobile-l) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atTab {
+	@media only screen and (min-width: $bp-tab) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atLap {
+	@media only screen and (min-width: $bp-lap) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atLapL {
+	@media only screen and (min-width: $bp-lap-l) {
+		@mixin-content;
+	}
+}
+
+@define-mixin at4k {
+	@media only screen and (min-width: $bp-4k) {
+		@mixin-content;
+	}
+}
+
+
+
 
 /*
 	usage:

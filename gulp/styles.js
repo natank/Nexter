@@ -6,6 +6,7 @@ import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
 import postcssExtend from 'postcss-extend';
 import postcssHexrgba from 'postcss-hexrgba';
+import postcssVars from 'postcss-simple-vars';
 
 gulp.task('styles', function () {
     let plugins = [
@@ -13,6 +14,7 @@ gulp.task('styles', function () {
         postcssPresetEnv({  
           stage: 3
         }),
+        postcssVars,
         postcssMixins,
         postcssNested,
         postcssExtend,
