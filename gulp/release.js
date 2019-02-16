@@ -58,5 +58,5 @@ gulp.task('previewRelease', function(){
 gulp.task('release', gulpSequence(
 	'clean-release',
 	['optimizeImages', 'optimize-files'],
-	'browserSync'
+	'previewRelease'
 	))

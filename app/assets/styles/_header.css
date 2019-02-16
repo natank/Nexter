@@ -9,7 +9,7 @@
 
 	display: grid;
 	grid-template-columns: 1fr [main-start] repeat(4, 3fr) [main-end]1fr;
-	grid-template-rows: [logo-start]30%[logo-end sub-title-start] 8% [sub-title-end title-start]15% [title-end cta-start]8% [cta-end] 5% [seen-start] 15% [seen-end logos-start] 1fr [logos-end];
+	grid-template-rows: [logo-start]30%[logo-end sub-title-start] minmax(8%, min-content) [sub-title-end title-start]15% [title-end cta-start]8% [cta-end] 5% [seen-start] 15% [seen-end logos-start] 1fr [logos-end];
 	
 
 
@@ -48,7 +48,6 @@
 
 	&__cta {
 		grid-row: cta-start / cta-end;
-
 		justify-self: start;
 	}
 

@@ -1,9 +1,9 @@
 import gulp from 'gulp';
 import postcss from 'gulp-postcss';
+import postcssMixins from 'postcss-mixins';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
-import postcssMixins from 'postcss-mixins';
 import postcssExtend from 'postcss-extend';
 import postcssHexrgba from 'postcss-hexrgba';
 
