@@ -7,7 +7,7 @@
 
 	display: grid;
 
-	grid-template-columns: repeat(auto-fill, minmax(20vw ,1fr));
+	grid-template-columns: repeat(auto-fill, minmax(300px ,1fr));
 	grid-auto-rows: minmax(max-content, 1fr);
 	grid-gap: 5rem;
 	align-items: stretch;
@@ -16,9 +16,10 @@
 
 	&__item {
 		display: grid;
+		min-width: 10rem;
 		grid-template-columns: repeat(2, 1fr);
 		background-color: var(--color-grey-light-1);
-		grid-row-gap: 6vh;
+		grid-row-gap: 3vw;
 
 	}
 

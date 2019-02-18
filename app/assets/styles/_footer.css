@@ -11,6 +11,13 @@
 
 	&__options {
 		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@mixin atTab {
+			flex-direction: row;
+			justify-content: space-around;
+
+		}
 		justify-content: space-around;	
 		align-items: stretch;
 		margin-bottom: 6rem;
@@ -19,6 +26,7 @@
 
 	&__option {
 		color: inherit;
+		background-color: grey;
 		font-family: var(--font-display);
 		text-transform: uppercase;
 		text-decoration: none;
