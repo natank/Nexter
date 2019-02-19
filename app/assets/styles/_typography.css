@@ -36,6 +36,14 @@ body {
 	&-4 {
 		@extend .heading;
 		font-size: 1.9rem;
+		
+		@mixin atMobL {
+			font-size: 2.5rem;
+		}
+		@mixin atTab {
+			font-size: 3rem;
+		}
+
 		&--light {
 			color: var(--color-grey-light-1);
 		}

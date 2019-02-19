@@ -3,17 +3,30 @@
 	margin: 15rem 0;
 	
 	grid-column: center-start/center-end;
-	
+	color: var(--color-grey-dark-1);
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(30rem ,1fr));
+	@mixin atTab {
+		grid-template-columns: repeat(auto-fill, minmax(39rem ,1fr));	
+	}
 	grid-gap: 6rem;
+	@mixin atLap {
+		grid-gap: 5rem;
+	}
 	align-items: start;
 }
 
 .feature {
 	display: grid;
-	grid-template-columns: min-content 1fr;
+	grid-template-columns: max-content 1fr;
+	grid-template-rows: repeat(2, max-content);
+	align-items: start;
 	grid-gap: 1.5rem;
+	line-height: 3rem;
+
+	@mixin atTab {
+		line-height: 4rem;
+	}
 
 
 	&__icon {
@@ -27,5 +40,12 @@
 	}
 	&__text {
 		font-size: 1.7rem;
+		@mixin atTab {
+			font-size: 3rem;
+		}
+		@mixin atMobL {
+			font-size: 2rem;
+		}
+
 	}	
 }

@@ -31,8 +31,12 @@
 	grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 	
 	@mixin atTab {
-		grid-template-rows: [nav-start] 80vh min-content 40vw repeat(3, min-content) [nav-end];
+		grid-template-rows: [nav-start] minmax(80vh, max-content) min-content 40vw repeat(3, min-content) [nav-end];
 		grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+	}
+
+	@mixin atLap {
+		grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];	
 	}
 
 
